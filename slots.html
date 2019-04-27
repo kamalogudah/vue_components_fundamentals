@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> VueJs Slot fundamentals</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1> Vuejs Slots Fundamentals</h1>
+        <todo-item>
+            Buy Bananas
+        </todo-item>
+    </div>
+    <script type="text/x-template" id="todo-item-template">
+        <div>
+            <input type="checkbox" v-model="completed">
+            <span :class="{ done: completed}"><slot></slot></span>
+
+        </div>
+    </script>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="slot.js"></script>
+    <style>
+        .done {
+            color: green;
+            text-decoration: line-through;
+        }
+    </style>
+
+</body>
+
+
+</html>
